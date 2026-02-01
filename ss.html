@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Searching & Sorting Algorithms</title>
-    <link rel="stylesheet" href="ss.css">
+    <meta name="description" content="Interactive guide to searching and sorting algorithms with live demos and code examples">
+    <meta name="theme-color" content="#0a0e1a">
+    <title>Algorithm Explorer — Search & Sort</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Searching & Sorting Algorithms</h1>
-            <p>Interactive guide with implementations and examples</p>
-        </div>
+        <header class="header">
+            <h1>Algorithm Explorer</h1>
+            <p>Interactive implementations of searching and sorting algorithms</p>
+        </header>
 
         <!-- Binary Search -->
-        <div class="algorithm-section">
-            <h2 class="algorithm-title">Binary Search (Iterative & Recursive)</h2>
+        <section class="algorithm-section" aria-labelledby="binary-search-title">
+            <h2 id="binary-search-title" class="algorithm-title">Binary Search (Iterative & Recursive)</h2>
             
             <div class="complexity">
                 <h4>Time Complexity: O(log n) | Space Complexity: O(1) iterative, O(log n) recursive</h4>
@@ -24,7 +26,6 @@
             <div class="grid-2">
                 <div>
                     <h4>Iterative Implementation:</h4>
-                    <pre>
                     <div class="code-block">
 <span class="keyword">function</span> <span class="function">binarySearchIterative</span>(arr, target) {
     <span class="keyword">let</span> left = <span class="number">0</span>;
@@ -45,11 +46,9 @@
 }
                     </div>
                 </div>
-                </pre>
                 
                 <div>
                     <h4>Recursive Implementation:</h4>
-                    <pre>
                     <div class="code-block">
 <span class="keyword">function</span> <span class="function">binarySearchRecursive</span>(arr, target, left = <span class="number">0</span>, right = arr.length - <span class="number">1</span>) {
     <span class="keyword">if</span> (left > right) <span class="keyword">return</span> -<span class="number">1</span>;
@@ -67,27 +66,26 @@
                     </div>
                 </div>
             </div>
-            </pre>
 
             <div class="demo-section">
                 <h4>Try Binary Search:</h4>
                 <div class="input-group">
-                    <label>Sorted Array (comma-separated):</label>
-                    <input type="text" id="bsArray" value="1,3,5,7,9,11,13,15,17,19" placeholder="1,3,5,7,9">
+                    <label for="bsArray">Sorted Array (comma-separated):</label>
+                    <input type="text" id="bsArray" value="1,3,5,7,9,11,13,15,17,19" placeholder="1,3,5,7,9" autocomplete="off">
                 </div>
                 <div class="input-group">
-                    <label>Target Value:</label>
-                    <input type="number" id="bsTarget" value="7" placeholder="7">
+                    <label for="bsTarget">Target Value:</label>
+                    <input type="number" id="bsTarget" value="7" placeholder="7" autocomplete="off">
                 </div>
-                <button class="btn" onclick="testBinarySearch()">Search (Iterative)</button>
-                <button class="btn" onclick="testBinarySearchRecursive()">Search (Recursive)</button>
-                <div id="bsResult"></div>
+                <button class="btn" onclick="testBinarySearch()" type="button">Search (Iterative)</button>
+                <button class="btn" onclick="testBinarySearchRecursive()" type="button">Search (Recursive)</button>
+                <div id="bsResult" role="status" aria-live="polite"></div>
             </div>
-        </div>
+        </section>
 
         <!-- First and Last Occurrence -->
-        <div class="algorithm-section">
-            <h2 class="algorithm-title">Find First and Last Occurrence</h2>
+        <section class="algorithm-section" aria-labelledby="first-last-title">
+            <h2 id="first-last-title" class="algorithm-title">Find First and Last Occurrence</h2>
             
             <div class="complexity">
                 <h4>Time Complexity: O(log n) | Space Complexity: O(1)</h4>
@@ -134,21 +132,21 @@
             <div class="demo-section">
                 <h4>Try First/Last Occurrence:</h4>
                 <div class="input-group">
-                    <label>Sorted Array (comma-separated):</label>
-                    <input type="text" id="flArray" value="1,2,2,2,3,4,4,5" placeholder="1,2,2,2,3,4,4,5">
+                    <label for="flArray">Sorted Array (comma-separated):</label>
+                    <input type="text" id="flArray" value="1,2,2,2,3,4,4,5" placeholder="1,2,2,2,3,4,4,5" autocomplete="off">
                 </div>
                 <div class="input-group">
-                    <label>Target Value:</label>
-                    <input type="number" id="flTarget" value="2" placeholder="2">
+                    <label for="flTarget">Target Value:</label>
+                    <input type="number" id="flTarget" value="2" placeholder="2" autocomplete="off">
                 </div>
-                <button class="btn" onclick="testFirstLast()">Find First & Last</button>
-                <div id="flResult"></div>
+                <button class="btn" onclick="testFirstLast()" type="button">Find First & Last</button>
+                <div id="flResult" role="status" aria-live="polite"></div>
             </div>
-        </div>
+        </section>
 
         <!-- Search in 2D Matrix -->
-        <div class="algorithm-section">
-            <h2 class="algorithm-title">Search in 2D Matrix</h2>
+        <section class="algorithm-section" aria-labelledby="matrix-search-title">
+            <h2 id="matrix-search-title" class="algorithm-title">Search in 2D Matrix</h2>
             
             <div class="complexity">
                 <h4>Time Complexity: O(log(m*n)) | Space Complexity: O(1)</h4>
@@ -184,21 +182,21 @@
             <div class="demo-section">
                 <h4>Try 2D Matrix Search:</h4>
                 <div class="input-group">
-                    <label>Matrix (rows separated by semicolon, elements by comma):</label>
-                    <input type="text" id="matrixInput" value="1,4,7,11;2,5,8,12;3,6,9,16" placeholder="1,4,7;2,5,8;3,6,9">
+                    <label for="matrixInput">Matrix (rows separated by semicolon, elements by comma):</label>
+                    <input type="text" id="matrixInput" value="1,4,7,11;2,5,8,12;3,6,9,16" placeholder="1,4,7;2,5,8;3,6,9" autocomplete="off">
                 </div>
                 <div class="input-group">
-                    <label>Target Value:</label>
-                    <input type="number" id="matrixTarget" value="5" placeholder="5">
+                    <label for="matrixTarget">Target Value:</label>
+                    <input type="number" id="matrixTarget" value="5" placeholder="5" autocomplete="off">
                 </div>
-                <button class="btn" onclick="testMatrixSearch()">Search Matrix</button>
-                <div id="matrixResult"></div>
+                <button class="btn" onclick="testMatrixSearch()" type="button">Search Matrix</button>
+                <div id="matrixResult" role="status" aria-live="polite"></div>
             </div>
-        </div>
+        </section>
 
         <!-- Peak Element -->
-        <div class="algorithm-section">
-            <h2 class="algorithm-title">Find Peak Element</h2>
+        <section class="algorithm-section" aria-labelledby="peak-element-title">
+            <h2 id="peak-element-title" class="algorithm-title">Find Peak Element</h2>
             
             <div class="complexity">
                 <h4>Time Complexity: O(log n) | Space Complexity: O(1)</h4>
@@ -228,17 +226,17 @@
             <div class="demo-section">
                 <h4>Try Peak Element:</h4>
                 <div class="input-group">
-                    <label>Array (comma-separated):</label>
-                    <input type="text" id="peakArray" value="1,2,3,1" placeholder="1,2,3,1">
+                    <label for="peakArray">Array (comma-separated):</label>
+                    <input type="text" id="peakArray" value="1,2,3,1" placeholder="1,2,3,1" autocomplete="off">
                 </div>
-                <button class="btn" onclick="testPeakElement()">Find Peak</button>
-                <div id="peakResult"></div>
+                <button class="btn" onclick="testPeakElement()" type="button">Find Peak</button>
+                <div id="peakResult" role="status" aria-live="polite"></div>
             </div>
-        </div>
+        </section>
 
         <!-- Merge Sort -->
-        <div class="algorithm-section sorting">
-            <h2 class="algorithm-title">Merge Sort Implementation</h2>
+        <section class="algorithm-section sorting" aria-labelledby="merge-sort-title">
+            <h2 id="merge-sort-title" class="algorithm-title">Merge Sort Implementation</h2>
             
             <div class="complexity">
                 <h4>Time Complexity: O(n log n) | Space Complexity: O(n)</h4>
@@ -276,17 +274,17 @@
             <div class="demo-section">
                 <h4>Try Merge Sort:</h4>
                 <div class="input-group">
-                    <label>Array (comma-separated):</label>
-                    <input type="text" id="mergeArray" value="64,34,25,12,22,11,90" placeholder="64,34,25,12,22,11,90">
+                    <label for="mergeArray">Array (comma-separated):</label>
+                    <input type="text" id="mergeArray" value="64,34,25,12,22,11,90" placeholder="64,34,25,12,22,11,90" autocomplete="off">
                 </div>
-                <button class="btn" onclick="testMergeSort()">Sort Array</button>
-                <div id="mergeResult"></div>
+                <button class="btn" onclick="testMergeSort()" type="button">Sort Array</button>
+                <div id="mergeResult" role="status" aria-live="polite"></div>
             </div>
-        </div>
+        </section>
 
         <!-- Quick Sort -->
-        <div class="algorithm-section sorting">
-            <h2 class="algorithm-title">Quick Sort Implementation</h2>
+        <section class="algorithm-section sorting" aria-labelledby="quick-sort-title">
+            <h2 id="quick-sort-title" class="algorithm-title">Quick Sort Implementation</h2>
             
             <div class="complexity">
                 <h4>Time Complexity: O(n log n) average, O(n²) worst | Space Complexity: O(log n)</h4>
@@ -321,17 +319,17 @@
             <div class="demo-section">
                 <h4>Try Quick Sort:</h4>
                 <div class="input-group">
-                    <label>Array (comma-separated):</label>
-                    <input type="text" id="quickArray" value="64,34,25,12,22,11,90" placeholder="64,34,25,12,22,11,90">
+                    <label for="quickArray">Array (comma-separated):</label>
+                    <input type="text" id="quickArray" value="64,34,25,12,22,11,90" placeholder="64,34,25,12,22,11,90" autocomplete="off">
                 </div>
-                <button class="btn" onclick="testQuickSort()">Sort Array</button>
-                <div id="quickResult"></div>
+                <button class="btn" onclick="testQuickSort()" type="button">Sort Array</button>
+                <div id="quickResult" role="status" aria-live="polite"></div>
             </div>
-        </div>
+        </section>
 
         <!-- Count Inversions -->
-        <div class="algorithm-section sorting">
-            <h2 class="algorithm-title">Count Inversions in Array</h2>
+        <section class="algorithm-section sorting" aria-labelledby="inversions-title">
+            <h2 id="inversions-title" class="algorithm-title">Count Inversions in Array</h2>
             
             <div class="complexity">
                 <h4>Time Complexity: O(n log n) | Space Complexity: O(n)</h4>
@@ -380,17 +378,17 @@
             <div class="demo-section">
                 <h4>Try Count Inversions:</h4>
                 <div class="input-group">
-                    <label>Array (comma-separated):</label>
-                    <input type="text" id="invArray" value="2,3,8,6,1" placeholder="2,3,8,6,1">
+                    <label for="invArray">Array (comma-separated):</label>
+                    <input type="text" id="invArray" value="2,3,8,6,1" placeholder="2,3,8,6,1" autocomplete="off">
                 </div>
-                <button class="btn" onclick="testCountInversions()">Count Inversions</button>
-                <div id="invResult"></div>
+                <button class="btn" onclick="testCountInversions()" type="button">Count Inversions</button>
+                <div id="invResult" role="status" aria-live="polite"></div>
             </div>
-        </div>
+        </section>
 
         <!-- Sort Colors -->
-        <div class="algorithm-section sorting">
-            <h2 class="algorithm-title">Sort Colors (Dutch National Flag)</h2>
+        <section class="algorithm-section sorting" aria-labelledby="sort-colors-title">
+            <h2 id="sort-colors-title" class="algorithm-title">Sort Colors (Dutch National Flag)</h2>
             
             <div class="complexity">
                 <h4>Time Complexity: O(n) | Space Complexity: O(1)</h4>
@@ -426,13 +424,15 @@
             <div class="demo-section">
                 <h4>Try Sort Colors (0, 1, 2):</h4>
                 <div class="input-group">
-                    <label>Array (comma-separated, only 0s, 1s, 2s):</label>
-                    <input type="text" id="colorArray" value="2,0,2,1,1,0" placeholder="2,0,2,1,1,0">
+                    <label for="colorArray">Array (comma-separated, only 0s, 1s, 2s):</label>
+                    <input type="text" id="colorArray" value="2,0,2,1,1,0" placeholder="2,0,2,1,1,0" autocomplete="off">
                 </div>
-                <button class="btn" onclick="testSortColors()">Sort Colors</button>
-                <div id="colorResult"></div>
+                <button class="btn" onclick="testSortColors()" type="button">Sort Colors</button>
+                <div id="colorResult" role="status" aria-live="polite"></div>
             </div>
-        </div>
+        </section>
     </div>
+    
     <script src="ss.js"></script>
 </body>
+</html>
